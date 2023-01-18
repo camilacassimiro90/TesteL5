@@ -4,17 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './core/pages/home/home.component';
 import { HistoricoComponent } from './core/pages/historico/historico.component';
-import { ListaMusica } from './core/shared/services/lista-musica.service.ts/lista-musica.service.ts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HistoricoComponent,
-    ListaMusica.Service.TsComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
