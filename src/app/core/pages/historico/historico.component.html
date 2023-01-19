@@ -1,17 +1,16 @@
 <div class="sidebar">
   <h1>Histórico de Pesquisas</h1>
+  <button style="margin-bottom: 20px" (click)="clear()">Limpar</button>
 
-  <button type="button" class="btn btn-primary">Limpar</button>
-
-  <div role="list">
-    <div>
-      <div>
+  <div (change)="count($event)">
+    <div *ngFor="let item of itens">
+      <div *ngIf="item.selectTipo == 'artista'">
         Artista:
-        <h3>{{item.inputTexto }</h3>
+        <h3>{{ item.inputTexto }}</h3>
       </div>
-      <div>
+      <div *ngIf="item.selectTipo == 'album'">
         Álbum:
-        <h3>{{ item.inputTexto }</h3>
+        <h3>{{ item.inputTexto }}</h3>
       </div>
     </div>
   </div>
