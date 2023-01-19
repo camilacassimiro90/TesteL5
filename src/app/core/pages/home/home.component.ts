@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   selectOpcoes = new FormControl(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
 
+
   itens: any[] = [];
 
   constructor(private listaMusicaService: ListaMusicalService) { }
