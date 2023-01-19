@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { ListaMusicalService } from 'src/app/shared/services/lista-musical.service';
+import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
+import { RefreshService } from 'src/app/shared/services/refresh.service';
 
 export interface ISearch {
   inputTexto: string;
@@ -22,14 +24,21 @@ export class HomeComponent implements OnInit {
   selectOpcoes = new FormControl(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
 
-
   itens: any[] = [];
 
-  constructor(private listaMusicaService: ListaMusicalService) { }
+  constructor(private listaMusicaService: ListaMusicalService, private storageService: LocalStorageService,
+    private refreshService: RefreshService) { }
 
   ngOnInit(): void { }
 
   pesquisar() {
+    let date = new Date();
+    this.storageService.set(
+      date.toLocaleDateString() + '-' + date.toLocaleTimeString(),
+      this.selectTipo + '?' + this.inputTexto
+    );
+
+    this.refreshService.setRefresh(true);
 
     if (this.selectTipo == 'album') {
       this.listaAlbum = true;
