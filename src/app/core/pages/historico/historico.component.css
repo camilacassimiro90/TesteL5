@@ -1,19 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
-
-.sidebar {
+#sidebar {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: Barlow, Open Sans, Lucida Grande, Helvetica Neue, Helvetica, Arial, Sans-serif;
   font-weight: 500;
   font-size: 18px;
-  width: 500px;
+  height: 100vh;
+  width: 200px;
   background-color: #FFFFFF;
   position: fixed;
   overflow: auto;
 }
 
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+.sidebar-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+  margin-bottom: 30px;
+  background-color: rgb(16, 16, 16);
+}
+
+.sidebar-brand {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sidebar-list {
+  padding: 0;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+.sidebar-list-item {
+  padding: 20px 20px 20px 20px;
+  font-size: 18px;
+  font-weight: 400;
+  color: red;
+}
+
+.sidebar-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.sidebar-list-item>a {
+  text-decoration: none;
+  color: #9e9ea4;
+}
+
+.sidebar-responsive {
+  display: inline !important;
+  position: absolute;
+}
+
+button {
+  padding: 2px;
+  margin-left: 40px;
+  width: 60%;
+  background-color: rgb(255, 64, 0);
+}
+
+.historic-list {
+  text-align: center;
 }

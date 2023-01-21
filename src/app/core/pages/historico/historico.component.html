@@ -1,8 +1,20 @@
-<div class="sidebar">
-  <h1>Histórico de Pesquisas</h1>
-  <button style="margin-bottom: 20px" (click)="clear()">Limpar</button>
+<aside id="sidebar">
+  <div class="sidebar-title">
+    <div class="sidebar-brand">
+      <span>
+        <a href=""><img src="assets/last-fm.png" style="width: 90%" /></a>
+      </span>
+    </div>
+  </div>
 
-  <div (change)="count($event)">
+  <ul class="sidebar-list">
+    <li class="sidebar-list-item">
+      <h3>Histórico de busca</h3>
+    </li>
+    <button type="button" (click)="clear()">Limpar</button>
+  </ul>
+
+  <div class="historic-list" (change)="count($event)">
     <div *ngFor="let item of itens">
       <div *ngIf="item.selectTipo == 'artista'">
         Artista:
@@ -14,4 +26,4 @@
       </div>
     </div>
   </div>
-</div>
+</aside>
