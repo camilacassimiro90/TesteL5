@@ -27,7 +27,7 @@ Crie um README.md com as instruções para a instalação/inicialização dessa 
    <li>Typescript</li>
 </ul>
 
-<h2>:woman_technologist:Autoras</h2>
+<h2>:woman_technologist:Autora</h2>
 
 <table>
   <tbody>
