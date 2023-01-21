@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
   listaArtista!: boolean;
   listaAlbum!: boolean;
 
+  public defaultItem: { text: string } = {
+    text: "Escolha o tipo",
+  };
+
   selectOpcoes = new FormControl(null, Validators.required);
   selectFormControl = new FormControl('', Validators.required);
 

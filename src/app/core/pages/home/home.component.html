@@ -10,6 +10,9 @@
           [(ngModel)]="inputTexto"
         />
         <select [(ngModel)]="selectTipo" [formControl]="selectOpcoes" required>
+          <option [defaultSelected]="defaultItem" textField="text">
+            Escolha o tipo
+          </option>
           <option value="artista">Artista</option>
           <option value="album">Album</option>
         </select>
