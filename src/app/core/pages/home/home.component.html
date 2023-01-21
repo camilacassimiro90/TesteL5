@@ -1,67 +1,66 @@
-<app-historico></app-historico>
-<!-- Search -->
-<div class="main">
-  <div class="content">
-    <h1>Lista de Artistas</h1>
-    <input type="text" [(ngModel)]="inputTexto" />
-    <button
-      type="button"
-      class="btn btn-primary"
-      *ngIf="selectOpcoes.hasError('required'); else valid"
-      disabled
-      #valid
-    >
-      Pesquisar
-    </button>
-    <ng-template #valid>
-      <button type="button" class="btn btn-success" (click)="pesquisar()">
-        Pesquisar
-      </button>
-    </ng-template>
+<body>
+  <div class="container">
+    <app-historico></app-historico>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <input
+          type="text"
+          placeholder="Digite sua pesquisa"
+          [(ngModel)]="inputTexto"
+        />
+        <select [(ngModel)]="selectTipo" [formControl]="selectOpcoes" required>
+          <option value="artista">Artista</option>
+          <option value="album">Album</option>
+        </select>
 
-    <select
-      class="form-select"
-      aria-label="Default select example"
-      [(ngModel)]="selectTipo"
-      [formControl]="selectOpcoes"
-      required
-    >
-      <option selected>Open this select menu</option>
-      <option value="artista">Artista</option>
-      <option value="album">Album</option>
-    </select>
-    <ng-template #valid>
-      <button color="primary" (click)="pesquisar()">Pesquisar</button>
-    </ng-template>
+        <button
+          type="button"
+          *ngIf="selectOpcoes.hasError('required'); else valid"
+          disabled
+          #valid
+        >
+          Pesquisar
+        </button>
+        <ng-template #valid>
+          <button type="button" class="btn btn-success" (click)="pesquisar()">
+            Pesquisar
+          </button>
+        </ng-template>
+      </div>
+    </header>
+    <!-- End Header -->
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <!-- HOME -->
+    <main>
+      <div class="content">
+        <div class="main-title">
+          <h2>Pesquise sobre o seu gosto musical!</h2>
+        </div>
 
-    <!-- Home -->
-    <div *ngIf="listaAlbum; else listaArtista">
-      <div *ngFor="let item of itens">
-        <div class="card">
-          <h2>Album:</h2>
-          <div class="card-body">{{ item.name }}</div>
-          <h2>Artista</h2>
-          <div class="card-body">{{ item.artist }}</div>
+        <div class="cards">
+          <article>
+            <div *ngIf="listaAlbum; else listaArtista">
+              <div class="card" *ngFor="let item of itens">
+                <h3>Album:</h3>
+                <div>{{ item.name }}</div>
+                <h3>Artista:</h3>
+                <div>{{ item.artist }}</div>
+              </div>
+            </div>
+          </article>
+
+          <ng-template #listaArtista>
+            <div class="card" *ngFor="let item of itens">
+              <div class="card-inner">
+                <h3>Artista</h3>
+                <div>{{ item.name }}</div>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
-    </div>
-
-    <ng-template #listaArtista>
-      <div *ngFor="let item of itens">
-        <div class="card">
-          <h2>Artista:</h2>
-          <div class="card-body">{{ item.name }}</div>
-        </div>
-      </div>
-    </ng-template>
+    </main>
+    <!-- End Main -->
   </div>
-</div>
+</body>
