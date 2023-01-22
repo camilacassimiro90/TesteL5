@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     let date = new Date();
     this.storageService.set(
       date.toLocaleDateString() + '-' + date.toLocaleTimeString(),
-      this.selectTipo + '?' + this.inputTexto
+      this.selectTipo + '=' + this.inputTexto
     );
 
     this.refreshService.setRefresh(true);
