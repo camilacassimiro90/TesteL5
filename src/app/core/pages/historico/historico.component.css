@@ -17,7 +17,7 @@
   align-items: center;
   padding: 30px 30px 30px 30px;
   margin-bottom: 30px;
-  background-color: rgb(16, 16, 16);
+  background-color: #101010;
 }
 
 .sidebar-brand {
@@ -36,29 +36,14 @@
   padding: 20px 20px 20px 20px;
   font-size: 18px;
   font-weight: 400;
-  color: red;
-}
-
-.sidebar-list-item:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-
-.sidebar-list-item>a {
-  text-decoration: none;
-  color: #9e9ea4;
-}
-
-.sidebar-responsive {
-  display: inline !important;
-  position: absolute;
+  color: #ff0000;
 }
 
 button {
   padding: 2px;
   margin-left: 40px;
   width: 60%;
-  background-color: rgb(255, 64, 0);
+  background-color: #ff4000;
 }
 
 .historic-list {
