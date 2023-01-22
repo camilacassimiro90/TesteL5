@@ -72,3 +72,55 @@ main {
   margin-top: 20px;
 }
 
+/* ---------- Responsividade CSS ---------- */
+
+@media screen and (max-width: 720px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .cards article.card {
+    margin-left: 0;
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin-left: 50;
+    margin-top: 0;
+    padding: 10px 20px;
+    transition: 0s;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .cards article.card {
+    margin-left: 0;
+    margin-bottom: 32px;
+  }
+
+  .title{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .content {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 10px 20px;
+    transition: 0s;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .cards article.card {
+    margin-left: 0;
+    margin-bottom: 32px;
+  }
+}
