@@ -46,7 +46,7 @@ export class LocalStorageService {
     const map = new Map(Object.entries(listaSalva));
     map.forEach(function (value, key) {
       if (typeof value === 'string') {
-        let item = value.split("?");
+        let item = value.split("=");
         let listaHistorico = new ListaHistorico();
         listaHistorico.selectTipo = item[0];
         listaHistorico.inputTexto = item[1];
