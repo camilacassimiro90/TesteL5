@@ -44,7 +44,11 @@
         <div class="cards">
           <article>
             <div *ngIf="listaAlbum; else listaArtista">
-              <div class="card" *ngFor="let item of itens">
+              <div
+                class="card"
+                *ngFor="
+                  let item of itens"
+              >
                 <h3>Album:</h3>
                 <div>{{ item.name }}</div>
                 <h3>Artista:</h3>
@@ -54,26 +58,29 @@
           </article>
 
           <ng-template #listaArtista>
-            <div class="card" *ngFor="let item of itens | paginate: { itemsPerPage: itensPorPagina, currentPage: paginaAtual }">
+            <div
+              class="card"
+              *ngFor="
+                let item of itens
+                  | paginate
+                    : { itemsPerPage: itensPorPagina, currentPage: paginaAtual }
+              "
+            >
               <div class="card-inner">
                 <h3>Artista</h3>
                 <div>{{ item.name }}</div>
               </div>
             </div>
           </ng-template>
-          <div *ngIf="dadosCarregados">
-            <pagination-controls (pageChange)="paginaAtual = $event"  [ngStyle]="{ 'position': 'relative', 'bottom': '-20px' }"></pagination-controls>
-          </div>
-
-
-          <!-- <div>
-            <p>Position: {{ position }}</p>
-            <button>Scroll to Top</button>
-          </div> -->
         </div>
-
       </div>
     </main>
+    <div *ngIf="dadosCarregados" class="pag">
+      <pagination-controls
+        (pageChange)="paginaAtual = $event"
+      ></pagination-controls>
+    </div>
+
     <!-- End Main -->
   </div>
 </body>

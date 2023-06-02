@@ -70,6 +70,7 @@ export class HomeComponent implements OnInit {
       this.listaMusicaService.pesquisarPorAlbum(this.inputTexto).subscribe(
         (response) => {
           this.itens = response.results.albummatches.album;
+          this.dadosCarregados = true;
         },
         (error) => {
           console.log(error);

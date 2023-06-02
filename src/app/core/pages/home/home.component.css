@@ -72,6 +72,14 @@ main {
   margin-top: 20px;
 }
 
+.pag {
+  position:relative;
+  margin-left:550px;
+  color: white;
+  font-weight: bolder;
+}
+
+
 /* ---------- Responsividade CSS ---------- */
 
 @media screen and (max-width: 720px) {
